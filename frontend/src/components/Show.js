@@ -5,13 +5,9 @@ function Show() {
   const [formData, setFormData] = useState({ name: '', role: '', email: '', password: '' });
 
   const fetchData = async () => {
-    try {
       const response = await axios.get('http://localhost:8081/showall');
       setRes(response.data);
       console.log(response.data)
-    } catch (error) {
-      console.error('Error fetching data:', error);
-    }
   };
   useEffect(() => {
     fetchData();
@@ -40,8 +36,7 @@ const handleChange = (e) => {
 };
    return (
      <div><center><h1>Registrations</h1>
-     <table border={1}>
-         
+     <table border={1}>         
            <tr>
            <th>ID</th>
              <th>Name</th>
